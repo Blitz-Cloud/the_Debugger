@@ -1,0 +1,19 @@
+{
+  "name": "terminal2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postcss:watch": "npx postcss -w src/style.css -o src/assets/output.css",
+    "postcss:build": "npx postcss  src/style.css -o src/assets/output.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "postcss": "^8.4.14",
+    "postcss-cli": "^10.0.0",
+    "tailwindcss": "^3.1.6"
+  }
+}

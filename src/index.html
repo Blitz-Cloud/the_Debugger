@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/output.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js" defer></script>
+    <script src="./assets/commands.js" defer></script>
+    <script src="./assets/utils.js" defer></script>
+    <script src="./assets/terminal.js" defer></script>
+    <script src="./index.js" defer></script>
+    <title>The Debugging Duck</title>
+  </head>
+  <body class="grid grid-cols-2">
+    <div class="h-full bg-slate-600 flex items-center overflow-hidden">
+      <!-- The Duck -->
+      <div class="container" onmouseenter="dontTuchMe()">
+        <div class="group">
+          <div class="left-tail-behind"></div>
+          <div class="middle-upper-body"></div>
+          <div class="belly"></div>
+          <div class="middle-lower-body"></div>
+          <div class="beak"></div>
+          <div class="head">
+            <div class="eye-white">
+              <div class="pupil">
+                <div class="eye-light"></div>
+              </div>
+            </div>
+          </div>
+          <div class="left-tail-front"></div>
+          <div class="wing"></div>
+          <div class="wave">
+            <svg
+              id="wave-svg"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 812.18 247.27"
+            >
+              <path
+                id="Subtraction_9"
+                data-name="Subtraction 9"
+                class="cls-1"
+                d="M805.67,400.27H-6.5v-160c6.56-.31,13.07-.88,19.36-1.71,6-.78,12-1.82,17.82-3.09a218.3,218.3,0,0,0,32-9.57,305,305,0,0,0,28.6-12.82c9.17-4.65,18.26-9.67,27.05-14.52l0,0c19.59-10.82,39.85-22,63.48-30.51a245.41,245.41,0,0,1,38.53-10.47c7.15-1.33,14.57-2.39,22-3.14,7.86-.78,16-1.25,24.32-1.4,1.62,0,3.29,0,4.94,0,7.08,0,14.19.27,21.13.82,6.61.51,13.29,1.29,19.84,2.31a280.41,280.41,0,0,1,36.66,8.29c10.48,3.09,21.58,7,33.95,11.81,11.09,4.36,22.15,9.09,32.85,13.67h0l4.64,2c10.94,4.67,22.64,9.62,34.85,14.28,13.32,5.08,25.58,9.16,37.46,12.46a327.15,327.15,0,0,0,41.89,8.81c7.61,1.09,15.4,1.92,23.17,2.47,8.14.58,16.53.88,24.94.88,10,0,20.3-.41,30.72-1.23,85.51-6.69,122.24-20.48,161.13-35.1h0c9.74-3.65,19.81-7.44,30.79-11.15v217Z"
+                transform="translate(6.5 -153)"
+              />
+            </svg>
+          </div>
+        </div>
+        <div id="messageBox" class="text-xl p-4"></div>
+      </div>
+    </div>
+    <div id="terminal" class="h-full relative bg-[#202746] text-slate-300">
+      <!-- The Terminal -->
+      <div id="banner" class="flex items-center justify-evenly">
+        <pre>
+               __
+             <(o )___
+              ( ._> /
+               `---' </pre>
+        <pre>
+          
+ _____ _           ______             
+|_   _| |          | ___ \            
+  | | | |__   ___  | |_/ /_   _  __ _ 
+  | | | '_ \ / _ \ | ___ \ | | |/ _` |
+  | | | | | |  __/ | |_/ / |_| | (_| |
+  \_/ |_| |_|\___| \____/ \__,_|\__, |
+                                 __/ |
+                                |___/ 
+
+      </div>
+      <div id="history" class="pl-4 m-2">
+        <p>Type the <span class="text-[#22a2c9]">help</span> command to see details</p>
+      </div>
+      <div id="ps1" class="pl-4 text-[#979db4]">
+        <p>client<span class=" text-blue-700">@</span>the_debugger:$ <span id="cmd"></span><span class="coursor">.</span></p>
+        <textarea
+          name=""
+          id=""
+          class="absolute right-[9999px]"
+          onkeyup="typeIt(this,event)"
+        ></textarea>
+      </div>
+    </div>
+  </body>
+</html>
+
+ 
